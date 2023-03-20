@@ -12,14 +12,16 @@ import turtle # Import the turtle library
 #-------Functions-------
 # Turtle Polygons
 class Polygon:
-    def __init__(self, sides, name, distance):
+    def __init__(self, sides, name, distance, color):
         self.sides = sides
         self.name = name
         self.distance = distance
+        self.color = color
         self.interior_angle = (self.sides - 2) * 180
         self.angle = self.interior_angle / self.sides
 
     def draw(self):
+        vex.color(self.color)
         vex.begin_fill()
         for i in range(self.sides):
             vex.forward(self.distance)
@@ -75,16 +77,16 @@ if __name__ == "__main__":
     looping = True
     while looping:
         # Define shapes
-        triangle = Polygon(3, "Triangle", 50)
-        square = Polygon(4, "Square", 50)
-        pentagon = Polygon(5, "Pentagon", 50)
-        hexagon = Polygon(6, "Hexagon", 50)
-        heptagon = Polygon(7, "Heptagon", 50)
-        octagon = Polygon(8, "Octagon", 50)
-        nonagon = Polygon(9, "Nonagon", 50)
-        decagon = Polygon(10, "Decagon", 50)
-        dodecagon = Polygon(12, "Dodecagon", 50)
-        circle = Polygon(500, "Circle", 1)
+        triangle = Polygon(3, "Triangle", 50, "white")
+        square = Polygon(4, "Square", 50, "white")
+        pentagon = Polygon(5, "Pentagon", 50, "white")
+        hexagon = Polygon(6, "Hexagon", 50, "white")
+        heptagon = Polygon(7, "Heptagon", 50, "white")
+        octagon = Polygon(8, "Octagon", 50, "red")
+        nonagon = Polygon(9, "Nonagon", 50, "white")
+        decagon = Polygon(10, "Decagon", 50, "white")
+        dodecagon = Polygon(12, "Dodecagon", 50, "white")
+        circle = Polygon(500, "Circle", 1, "yellow")
 
         shape = user_input()
 
@@ -92,9 +94,8 @@ if __name__ == "__main__":
         wn = turtle.Screen() # Define the screen as a variable
         wn.setup(500, 400) # Setup the screen resolution
         wn.bgcolor("darkblue") # Set the background color
-        wn.title("Titled Document") # Set the screen title
+        wn.title("Drawing Shapes") # Set the screen title
         vex = turtle.Turtle() # Define the turtle into a variable
-        vex.color("white") # Set the turtle color
         vex.width(3) # Set the turtle width
 
         # Draw the Shape
