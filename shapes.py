@@ -108,11 +108,17 @@ if __name__ == "__main__":
 
         # Listen for Keybinds
         wn.listen()
+
+        # Window Controls
         wn.onkey(close, "q")
+
+        # Movement Controls
         wn.onkey(right.move, "d")
         wn.onkey(up.move, "w")
         wn.onkey(left.move, "a")
         wn.onkey(down.move, "s")
+
+        # Pen Controls
         wn.onkey(pen_up, "r")
         wn.onkey(pen_down, "f")
 
