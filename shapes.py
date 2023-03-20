@@ -9,14 +9,6 @@ Project: Turtle Shapes and Movement
 #-------Libraries-------
 import turtle # Import the turtle library
 
-wn = turtle.Screen() # Define the screen as a variable
-wn.setup(500, 400) # Setup the screen resolution
-wn.bgcolor("darkblue") # Set the background color
-wn.title("Titled Document") # Set the screen title
-vex = turtle.Turtle() # Define the turtle into a variable
-vex.color("white") # Set the turtle color
-vex.width(3) # Set the turtle width
-
 #-------Functions-------
 # Turtle Polygons
 class Polygon:
@@ -96,13 +88,23 @@ if __name__ == "__main__":
 
         shape = user_input()
 
+        # Turtle Setup
+        wn = turtle.Screen() # Define the screen as a variable
+        wn.setup(500, 400) # Setup the screen resolution
+        wn.bgcolor("darkblue") # Set the background color
+        wn.title("Titled Document") # Set the screen title
+        vex = turtle.Turtle() # Define the turtle into a variable
+        vex.color("white") # Set the turtle color
+        vex.width(3) # Set the turtle width
+
+        # Draw the Shape
+        shape.draw()
+
         # Define class Movement for each direction
         right = Movement("d", 0)
         up = Movement("w", 90)
         left = Movement("a", 180)
         down = Movement("s", 270)
-
-        shape.draw()
 
         # Listen for Keybinds
         wn.listen()
